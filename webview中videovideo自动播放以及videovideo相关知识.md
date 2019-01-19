@@ -24,7 +24,9 @@ setMediaPlaybackRequiresUserGesture(false)
 ```
 [参考资料](https://developer.android.com/reference/android/webkit/WebSettings#setMediaPlaybackRequiresUserGesture(boolean))
 
-# iOS webview 默认播放策略
+# iOS 自动播放
+
+### iOS webview 默认播放策略
 
 iOS 9— 必须用户手势， iOS 10+ 新策略：
 
@@ -37,7 +39,7 @@ iOS 9— 必须用户手势， iOS 10+ 新策略：
   
  想要hack的可以放弃了。。
 [参考资料](https://webkit.org/blog/6784/new-video-policies-for-ios/)
-# 修改 iOS 默认策略
+### 修改 iOS 默认策略
 ```
 let configuration = WKWebViewConfiguration()
 configuration.allowsInlineMediaPlayback = true
