@@ -1,6 +1,3 @@
-# 需求
-进入第三方app的webview后自动播放视频，实现类似抖音feed流功能
-
 # Android 自动播放
 
 ### Android webview 默认播放策略
@@ -38,14 +35,17 @@ iOS 9— 必须用户手势， iOS 10+ 新策略：
 > 5. <video autoplay> elements will pause if they become non-visible, such as by being scrolled out of the viewport.
   
  想要hack的可以放弃了。。
+ 
 [参考资料](https://webkit.org/blog/6784/new-video-policies-for-ios/)
 ### 修改 iOS 默认策略
+想要实现视频带声音自动播放必须在native层面调用如下方法
 ```
 let configuration = WKWebViewConfiguration()
 configuration.allowsInlineMediaPlayback = true
 configuration.mediaTypesRequiringUserActionForPlayback = .audio
 let webView = WKWebView(frame: .zero, configuration: configuration)
 ```
+
 [参考资料](https://www.thomasvisser.me/2018/06/26/wkwebview-media/)
 
 # 视频播放时调用协调播放器
